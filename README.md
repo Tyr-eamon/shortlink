@@ -25,25 +25,28 @@
 7. 执行sql命令创建表（在控制台输入框粘贴下面语句执行即可）
 
 ```sql
+-- links 表
 DROP TABLE IF EXISTS links;
-CREATE TABLE IF NOT EXISTS links (
-  `id` integer PRIMARY KEY NOT NULL,
-  `url` text,
-  `slug` text,
-  `ua` text,
-  `ip` text,
-  `status` int,
-  `create_time` DATE
+CREATE TABLE links (
+    id INTEGER PRIMARY KEY,
+    url TEXT,
+    slug TEXT,
+    ua TEXT,
+    ip TEXT,
+    status INTEGER,
+    create_time TEXT DEFAULT (datetime('now'))
 );
+
+-- logs 表
 DROP TABLE IF EXISTS logs;
-CREATE TABLE IF NOT EXISTS logs (
-  `id` integer PRIMARY KEY NOT NULL,
-  `url` text ,
-  `slug` text,
-  `referer` text,
-  `ua` text ,
-  `ip` text ,
-  `create_time` DATE
+CREATE TABLE logs (
+    id INTEGER PRIMARY KEY,
+    url TEXT,
+    slug TEXT,
+    referer TEXT,
+    ua TEXT,
+    ip TEXT,
+    create_time TEXT DEFAULT (datetime('now'))
 );
 
 ```
